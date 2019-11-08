@@ -12,7 +12,7 @@ fields = rawData.map(lambda x: x.split("\t"))
 documents = fields.map(lambda x: x[3].split(" "))
 
 # Store the document names for later:
-documentNames = fields.map(lambda x: x[1])
+documentNames = fields.map(lambda x: x[1].encode('utf-8'))
 
 # Now hash the words in each document to their term frequencies:
 hashingTF = HashingTF(100000)  #100K hash buckets just to save some memory
